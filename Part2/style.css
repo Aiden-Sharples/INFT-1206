@@ -1,0 +1,118 @@
+/* General setup */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400;500&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Serif", serif;
+  background-color: #f4f4f4;
+  padding: 40px;
+  letter-spacing: 0.02rem;
+  line-height: 1.6;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin-bottom: 10px;
+}
+
+nav a {
+  display: block;
+  background: #aa6666;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background: #884444;
+}
+nav a {
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+}
+
+/* header and footer */
+
+header {
+  border-bottom: 5px solid #aa6666;
+}
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.15rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8rem;
+  letter-spacing: 0.05rem;
+  margin-bottom: 0;
+}
+
+section h2 + p {
+  text-indent: 2rem;
+}
+
+footer {
+  border-top: 5px solid #aa6666;
+}
+
+footer p {
+  text-align: center;
+}
+/* Layout */
+
+main {
+  display: grid;
+  grid-template-columns: 5fr 2fr 2fr;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+a {
+  color: #aa6666;
+  text-decoration: underline;
+  outline: none;
+}
+
+a:visited {
+  color: #884444;
+}
+
+a:hover,
+a:focus {
+  color: #aa6666;
+  text-decoration: none;
+  outline: none;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: square;
+}
+
+a[href^="http"]::after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 0.3rem;
+  background-image: url("external-link-52.png");
+  background-size: cover;
+}
