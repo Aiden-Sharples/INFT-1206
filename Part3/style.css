@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: #333333;
+  margin: 0;
+  font: 1.2em / 1.6 sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border: 1px solid black;
+}
+
+/* HEADER / LOGO */
+.logo {
+  font-size: 200%;
+  padding: 50px 20px;
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+/* NAVIGATION BAR */
+nav {
+  background-color: black;
+  padding: 0.5em;
+
+  /* Sticky requirement */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  /* Layout requirement: items in a row with equal spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+}
+
+/* MAIN GRID: ARTICLE + ASIDE */
+.grid {
+  margin: 0 auto;
+  max-width: 980px;
+
+  /* Two-column layout: article 3x wider */
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+
+/* FEATURE IMAGE WRAPPING */
+.feature {
+  float: left;
+  width: 200px;
+  margin: 0 20px 20px 0; /* space on right + bottom */
+}
+
+/* PHOTO GRID IN ASIDE */
+.photos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
