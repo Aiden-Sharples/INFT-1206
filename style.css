@@ -1,0 +1,48 @@
+/* Remove default margins */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Font + 100% height */
+html {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  height: inherit;
+  background: black; /* ensures no white background flashes */
+}
+
+/* Make canvas fill the entire screen */
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Title text */
+h1 {
+  font-size: 2rem;
+  letter-spacing: -1px;
+  position: absolute;
+  margin: 0;
+  top: -4px;
+  right: 5px;
+
+  color: transparent;
+  text-shadow: 0 0 4px white;
+}
+
+/* Score counter */
+#score {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 4px black;
+}
