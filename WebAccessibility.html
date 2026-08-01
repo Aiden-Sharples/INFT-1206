@@ -1,0 +1,194 @@
+<!--
+Name: Aiden Sharples
+File: WebAccessibility.html
+Date: 01 August 2026
+Accessible wildlife article page with improved semantics, labels, and keyboard support.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to our wildlife website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>Welcome to our wildlife website</h1>
+
+    <nav class="nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+
+      <form action="#" method="get" class="search-form">
+        <label for="search" class="sr-only">Search the site</label>
+        <input id="search" name="q" type="search" placeholder="Search...">
+        <button type="submit">Go!</button>
+      </form>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="layout">
+      <article>
+        <h2>The trouble with Bears</h2>
+        <p class="byline">By Evan Wild</p>
+
+        <section>
+          <h3>Introduction</h3>
+          <p>
+            Tall, lumbering, angry, dangerous. The real live bears of this world are proud,
+            independent creatures, self-serving and always on the hunt for food. Nothing like
+            the bears you see on TV, like Baloo from renowned documentary, <em>The Jungle Book</em>.
+          </p>
+          <p>
+            So what are bears really like, and why does the world’s media portray them with such
+            a skewed vision? In this article we try to answer those questions, and give you a real
+            insight into the life of the bear.
+          </p>
+        </section>
+
+        <section>
+          <h3>Types of bear</h3>
+          <p>
+            Bears come in two varieties — large and medium. You don’t get small bears. If you have
+            seen a small bear, then it was in fact probably a baby bear (cub) from another species.
+          </p>
+          <p>
+            Bears can also be classified in terms of their habitat — both large and medium bears are
+            just as at home in urban areas as in forests, mountains, or tundra.
+          </p>
+        </section>
+
+        <figure>
+          <img src="wild-bear.jpg" alt="A large brown bear walking through a forest">
+          <figcaption>A brown bear in its natural habitat.</figcaption>
+        </figure>
+
+        <figure>
+          <audio controls>
+            <source src="bear.MP3" type="audio/mpeg">
+            <p>Your browser does not support HTML audio. You can
+              <a href="audio/bear-story.mp3">download the audio file here</a>.
+            </p>
+          </audio>
+          <figcaption>
+            <h3>Audio transcript</h3>
+            <p>
+              In this audio clip, a wildlife expert describes the daily life of bears, including
+              their feeding habits, social behavior, and how they interact with their environment...
+              <!-- full transcript would go here -->
+            </p>
+          </figcaption>
+        </figure>
+
+        <section aria-labelledby="bear-table-heading">
+          <h3 id="bear-table-heading">Bear populations by region</h3>
+          <table>
+            <caption>Estimated numbers of large and medium bears in different regions.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Region</th>
+                <th scope="col">Large bears</th>
+                <th scope="col">Medium bears</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">North</th>
+                <td>120</td>
+                <td>80</td>
+              </tr>
+              <tr>
+                <th scope="row">South</th>
+                <td>90</td>
+                <td>110</td>
+              </tr>
+              <tr>
+                <th scope="row">East</th>
+                <td>60</td>
+                <td>70</td>
+              </tr>
+              <tr>
+                <th scope="row">West</th>
+                <td>75</td>
+                <td>95</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="comments-section">
+          <h3>Comments</h3>
+          <button id="toggle-comments" type="button" aria-expanded="false" aria-controls="comments">
+            Show comments
+          </button>
+
+          <div id="comments" hidden>
+            <form action="#" method="post" class="comment-form">
+              <div class="form-row">
+                <label for="username">Name</label>
+                <input id="username" name="username" type="text">
+              </div>
+
+              <div class="form-row">
+                <label for="comment">Comment</label>
+                <textarea id="comment" name="comment" rows="4"></textarea>
+              </div>
+
+              <button type="submit">Submit comment</button>
+            </form>
+          </div>
+        </section>
+      </article>
+
+      <aside class="sidebar" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related</h2>
+        <ul>
+          <li><a href="#">The trouble with Bees</a></li>
+          <li><a href="#">The trouble with Otters</a></li>
+          <li><a href="#">The trouble with Penguins</a></li>
+          <li><a href="#">The trouble with Octopi</a></li>
+          <li><a href="#">The trouble with Lemurs</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Wildlife Website</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-comments');
+    const comments = document.getElementById('comments');
+
+    function toggleComments() {
+      const isHidden = comments.hasAttribute('hidden');
+      if (isHidden) {
+        comments.removeAttribute('hidden');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.textContent = 'Hide comments';
+      } else {
+        comments.setAttribute('hidden', '');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.textContent = 'Show comments';
+      }
+    }
+
+    toggleBtn.addEventListener('click', toggleComments);
+    toggleBtn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleComments();
+      }
+    });
+  </script>
+</body>
+</html>
