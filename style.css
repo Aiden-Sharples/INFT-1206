@@ -1,0 +1,37 @@
+
+/* Margin set to 0 */
+html, body {
+  margin: 0;
+}
+
+/* Font and full-height layout */
+html {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  height: inherit;
+}
+
+/* Full‑screen canvas for the game graphics */
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+}
+
+/* Title styling in top-right corner */
+h1 {
+  font-size: 2rem;
+  letter-spacing: -1px;
+  position: absolute;
+  margin: 0;
+  top: -4px;
+  right: 5px;
+
+  color: transparent;
+  text-shadow: 0 0 4px white;
+}
