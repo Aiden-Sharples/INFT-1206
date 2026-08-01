@@ -1,0 +1,44 @@
+<!--
+Name: Aiden Sharples
+File: SillyStoryGen.html
+Date: 19 July 2026
+Generates silly stories.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silly Story Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div>
+    <label for="custom-name">Enter custom name:</label>
+    <input id="custom-name" type="text" placeholder="" />
+  </div>
+
+  <fieldset>
+    <legend>Choose locale:</legend>
+
+    <!-- Default checked: US -->
+    <label for="us">US</label>
+    <input id="us" type="radio" name="uk-us" value="us" checked />
+
+
+    <label for="uk">UK</label>
+    <input id="uk" type="radio" name="uk-us" value="uk" />
+  </fieldset>
+
+  <div>
+    <button class="generate">Generate random story</button>
+  </div>
+
+  <!-- Story output -->
+  <p class="story"></p>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
